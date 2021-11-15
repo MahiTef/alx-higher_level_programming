@@ -9,19 +9,17 @@ int check_cycle(listint_t *list)
 {
   listint_t *first_cycle, *second_cycle;
 
-  second_cycle = list;
-  first_cycle = list;
-
-  if (!list || !list->next)
+  if (list == NULL || list->next == NULL)
     return (0);
-  for (;first_cycle && first_cycle->next;)
-    {
-      first_cyle = first_cycle->next->next;
-      second_cyle = second_cycle->next;
-      if (first_cycle == second_cycle)
-	{
-	  return (1);
-	}
-    }
-  return (0);
+  first_cycle = list;
+  second_cycle = first_cycle->next;
+while (first_cycle != NULL && second_cycle->next != NULL
+       && second_cycle->next->next != NULL)
+  {
+    if (first_cycle == second_cycle)
+      return (1);
+    first_cycle = first_cycle->next;
+    second_cycle = second_cycle->next->next;
+  }
+ return (0);
 }
