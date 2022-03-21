@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Fetches https://alx-intranet.hbtn.io/status"""
+"""
+Prints different results of
+a request
+"""
 import urllib.request
 
 
-def fetcher():
-    """fetcher"""
-    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as response:
+if __name__ == "__main__":
+    url = "https://intranet.hbtn.io/status"
+    with urllib.request.urlopen(url) as response:
         html = response.read()
         print("Body response:")
-        print("\t- type: {}".format(type(html)))
-        print("\t- content: {}".format(html))
-        print("\t- utf8 content: {}".format(html.decode("utf-8")))
-
-if __name__ == "__main__":
-    fetcher()
+        print("- type:", type(html))
+        print("- content:", html)
+        print("- utf8 content:", html.decode("utf-8"))
