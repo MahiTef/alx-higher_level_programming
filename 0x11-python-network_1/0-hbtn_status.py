@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-"""
-Prints different results of
-a request
-"""
+"""Prints different results of a request"""
 import urllib.request
-
 
 if __name__ == "__main__":
     url = "https://intranet.hbtn.io/status"
